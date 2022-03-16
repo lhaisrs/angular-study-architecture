@@ -1,0 +1,14 @@
+<!-- Content -->
+<div class="content">
+    <!-- Title -->
+    <div class="title-section">
+        <h1 class="uk-text-lead uk-text-bold">My Cat Facts</h1>
+    </div>
+    <!-- Cards List -->
+    <div>
+        <div class="uk-card uk-card-body uk-card-default card" *ngFor="let fact of catFacts">
+            <h5>{{ fact.text }}</h5>
+        </div>
+    </div>
+</div>
+<!-- End Content -->
