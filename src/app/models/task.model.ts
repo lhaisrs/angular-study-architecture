@@ -1,11 +1,11 @@
-export class FactModel {
-    private readonly id: string;
-    public readonly createdAt: string;
-    public readonly description: string;
-    public readonly updatedAt: string;
-    public readonly completed: boolean;
+export class TaskModel {
+    public readonly id: string;
+    public createdAt?: string;
+    public readonly description?: string;
+    public readonly updatedAt?: string;
+    public completed?: boolean;
 
-    constructor(_id: string, _createdAt: string, _description: string, _updatedAt: string, _completed: boolean) {
+    constructor(_id: string, _createdAt?: string, _description?: string, _updatedAt?: string, _completed?: boolean) {
         this.id = _id;
         this.createdAt = _createdAt;
         this.description = _description;
