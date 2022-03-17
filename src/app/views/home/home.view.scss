@@ -1,1 +1,72 @@
-.content {}
+.content {
+  margin: 5rem;
+
+  /* CSS of UIKit Styles */
+
+  .uk-checkbox:checked {
+      background-color: #32d296;
+  }
+
+  .uk-checkbox:focus {
+    border-color: #32d296;
+  }
+
+  .uk-card-body {
+      padding: 10px 10px;
+  }
+
+  /* End CSS of UIKit Styles */
+
+  /* Add Task Section */
+
+  .add-task-section {
+    display: flex;
+    justify-content: space-between;
+
+    input {
+      width: 90%;
+    }
+  }
+
+  /* End Add Task Section */
+
+  /* Task List Section */
+
+  .task-list-section {
+    padding-top: 5rem;
+
+    .card-task {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-task-description {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+
+      .description {
+          padding-left: 2rem;
+      }
+    }
+
+    .task-actions {
+      display: flex;
+      justify-content: space-around;
+      flex-direction: row;
+      width: 10%;
+    }
+  }
+
+  /* End Task List Section */
+
+  /* Checkbox Style depends when is selected */
+
+  input[type=checkbox]:checked + p {
+    text-decoration: line-through;
+  }
+}
