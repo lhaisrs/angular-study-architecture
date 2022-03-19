@@ -10,12 +10,12 @@ import * as moment from 'moment';
   templateUrl: '../views/home/home.view.html',
   styleUrls: ['../views/home/home.view.scss'],
 })
+
 export class HomeViewModel implements OnInit, OnDestroy {
 
   private readonly destroy$: Subject<boolean> = new Subject();
   public description: string = '';
   public tasks: Observable<TaskModel[]> = new Observable(); 
-  //public tasks: TaskModel[] = [];
 
   constructor(private readonly service: TaskService) { }
 
@@ -29,11 +29,6 @@ export class HomeViewModel implements OnInit, OnDestroy {
 
   public readTasks(): void {
    this.tasks = this.service.fetch().valueChanges();
-  //  this.service.fetch().valueChanges().pipe(
-  //    takeUntil(this.destroy$),
-  //    mergeMap((values: TaskModel[]) => this.tasks = values),
-  //    map((task, index) => this.tasks[index].createdAt = this.transformDate(task.createdAt))
-  //  ).subscribe();
   }
 
   public async createTask(): Promise<void> {
@@ -45,12 +40,12 @@ export class HomeViewModel implements OnInit, OnDestroy {
   public updateTask(task: TaskModel): void {
     //Update completed field
     task.completed = true;
+    task.updatedAt = new Date().toString();
     this.service.update(task);
   }
 
   public deleteTask(task: TaskModel): void {
     this.service.delete(task);
-    //this.readTasks();
   }
 
   // private transformDate(date?: string): string {

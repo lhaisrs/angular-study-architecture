@@ -2,7 +2,7 @@ export class TaskModel {
     public readonly id: string;
     public createdAt?: string;
     public readonly description?: string;
-    public readonly updatedAt?: string;
+    public updatedAt?: string;
     public completed?: boolean;
 
     constructor(_id: string, _createdAt?: string, _description?: string, _updatedAt?: string, _completed?: boolean) {
